@@ -1,2 +1,16 @@
 @import './timer';
 @import './selected-time';
+
+button {
+  font-size: 18px;
+  font-weight: 700;
+  border: 2px solid transparent;
+  background-color: orange;
+  color: white;
+  padding: 5px 10px;
+  &:hover {
+    border: 2px solid orange;
+    background-color: white;
+    color: orange;
+  }
+}

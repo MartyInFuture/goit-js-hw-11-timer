@@ -1,8 +1,8 @@
 .timer {
-  margin-top: 75px;
+  margin-top: 40px;
+  text-align: center;
   &-title {
     font-size: 34px;
-    text-align: center;
   }
   &-list {
     list-style: none;
@@ -20,10 +20,17 @@
   }
   &-value {
     font-size: 50px;
-    text-align: center;
   }
   &-label {
     color: blueviolet;
     font-size: 32px;
   }
+}
+
+.refresh-timer {
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  cursor: pointer;
 }
