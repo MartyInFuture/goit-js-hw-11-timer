@@ -1,0 +1,26 @@
+// ="selected-container">
+//       <form class="selected-form" action="">
+//         <input class="selected-input" type="text" />
+//         <button class="selected-button
+
+.selected {
+  &-title {
+    text-align: center;
+    font-size: 50px;
+  }
+  &-container {
+    width: 300px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  &-form {
+    display: flex;
+    display: flex;
+    justify-content: space-around;
+  }
+  &-input {
+    width: 120px;
+  }
+  &-button {
+  }
+}
