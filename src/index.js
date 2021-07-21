@@ -20,6 +20,7 @@ function initialization() {
     interval = setInterval(() => {
       if (!localStorage.data) {
         clearInterval(interval);
+        return;
       }
       const date = new Date().getTime();
 
@@ -37,17 +38,9 @@ function initialization() {
       const hours = parseInt((difference - days * 24 * 60 * 60) / 60 / 60);
       const minutes = parseInt((difference - days * 24 * 60 * 60 - hours * 60 * 60) / 60);
       const seconds = parseInt(difference - days * 24 * 60 * 60 - hours * 60 * 60 - minutes * 60);
-
-      for (const item of data.timerValue) {
-        if (item.dataset.value === 'days') {
-          item.textContent = Math.abs(days);
-        } else if (item.dataset.value === 'hours') {
-          item.textContent = Math.abs(hours);
-        } else if (item.dataset.value === 'minutes') {
-          item.textContent = Math.abs(minutes);
-        } else if (item.dataset.value === 'seconds') {
-          item.textContent = Math.abs(seconds);
-        }
+      const dataArr = [days, hours, minutes, seconds];
+      for (let i = 0; i < data.timerValue.length; i += 1) {
+        data.timerValue[i].textContent = dataArr[i];
       }
     }, 1000);
   } else {
@@ -58,7 +51,7 @@ initialization();
 
 data.button.addEventListener('click', e => {
   e.preventDefault();
-  if (!data.inputYear.value) return;
+  if (!data.inputYear.value && !data.inputHour.value) return;
   const newData = data.inputYear.value.split('/');
   const correctTime = data.inputHour.value.split(':').map(item => parseInt(item));
   localStorage.setItem('data', [
